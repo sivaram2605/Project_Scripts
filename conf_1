@@ -1,0 +1,4 @@
+export TEJAS_BASE=/etc/tejas/
+export IP_Alias=1
+export PORTS_BASE=50020
+export ROUTER_ID=172.18.0.2
