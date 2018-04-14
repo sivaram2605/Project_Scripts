@@ -1,0 +1,11 @@
+Images were created by commiting a container after setting all the required settings in the container.
+
+A new container can be launched using the procedure mentioned in "for execution"text file.
+
+Make the required changes Launch three containers and verify everything then commit that image using:
+
+					docker commit "containername"  repositoryname:tag
+
+That's all launch a container with your new image and ur settings would have been saved over there and when simulator opens you will find it safe and stall.....
+
+

@@ -1,0 +1,110 @@
+Please follow "After FEB 2018 folder only............ 
+
+For installation purposes and other reference files w.r.t installation.
+
+=======================================================================================================================================================
+
+
+I have created tejas:Feb18 image using the container named cont_5 hence my default router ip 172.18.0.5 and eth0 IP is 172.17.0.5.
+
+So Accordingly,My ping check in initial launching that happens after running checkconf.sh is through 172.18.0.5
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+checkconf.sh and UI_restart.sh and other script files useful are kept in the folde named "Reference scripts for execution" 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+*******************************************************************************************************************************************************
+==========================================================================================================================================================
+Whenever you want to run a single container use the following these steps:
+
+docker run -it --name=xxxxx -P --privileged -v=/home/checkconf.sh:/checkconf.sh -v=/home/UI_restart.sh:/UI_restart.sh -v=/home:/data tejas:Feb18 /bin/bash
+
+
+
+In the container enter ./checkconf.sh and when u see cue to open browser
+(please Don't press ctrl-p+ctrl-Q when you are running container in this manner just press Ctrl-c)
+
+ then open firefox and type the eth0IP as 172.17.0.x:20080 and enter
+
+It asks for credentials:USERNAME:DIAGUSER  
+			 Password:j72e#05t   
+			      LOCAL             
+			     submit 
+
+Change the eth0IP as 172.17.0.x from the default eth0IP which is 172.17.0.5
+change the routerIP as 172.x.x.x from the default routerIP which is 172.18.0.5
+After wards enter Submit
+
+In case u needed eth0IP and routerIP same as that of default pls press submit and proceed
+
+Click Accept modifications.
+
+It shows warm reboot required.
+
+Close the browser or leave the Tab like that as you wish
+
+In the container run ./UI_restart.sh and when u see cue to open browser
+(please Don't press ctrl-p+ctrl-Q when you are running container in this manner just press Ctrl-c)
+
+Go to browser refresh the tab if not closed 
+
+otherwise open firefox and type the eth0IP as 172.17.0.x:20080 and enter
+
+It asks for credentials:USERNAME:DIAGUSER  
+			 Password:j72e#05t   
+			      LOCAL             
+			     submit 
+
+The routerIP and eth0IP will be set.
+=========================================================================================================================================================
+*********************************************************************************************************************************************************
+
+########################################################################################################################################################
+=========================================================================================================================================================
+
+Whenever you want to run a multiple containers use the following steps:
+ 
+go to /home/avinash and then run./Bautomate.sh
+
+It will delete previously existing containers in order to avoid name conflicts if u don't want this feature please kindly modfify ./Bautomate.sh and save as another file.
+
+If u proceed with modifications u will end with an option to
+ enter number of containers:
+ enter number of subnets:
+
+For 1:number of subnets
+ enter the number of subnets ID:
+ enter the number of ips in the subnet:
+end
+
+if number of containers and sum of all the number of ips in all subnetIDs don't match then an error message will be displayed and u will be taken to home.
+
+If no error comes thwn welcome to container2 msg comes and then on wards
+
+press ctrl-p+ctrl-Q when you are running container using the ./Bautomate.sh whenever it appears on terminal
+
+After first appearence and if u click the same you will be taken to browser with the configurations set as per the subnet numbers and IPs you have given.
+Just press submit and close the tab.
+
+Press ctrl-P+Ctrl-Q whenever it appears on the screen.After the second appearence u will be taken to next container....
+
+Welcome to container3.....
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+Once u reach the last container and when u press the ctrl-P+Ctrl-Q on the second appearence.It will open browser with all simulators with the configured IPs ready for you to establish trunks and proceed further.
+=========================================================================================================================================================
+#########################################################################################################################################################
